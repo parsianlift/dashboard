@@ -190,6 +190,15 @@
 
     <!-- اسکریپت‌های سفارشی -->
     <script>
+
+        <script>
+  // چک کن آیا کاربر لاگین کرده (مثلاً یه فلگ ساده توی localStorage)
+  if (!localStorage.getItem('isLoggedIn')) {
+    window.location.href = 'login.html';
+  }
+>
+
+    
         // حفاظت صفحه – اگر لاگین نکرده باشد
         if (localStorage.getItem('loggedIn') !== 'true') {
             alert('لطفاً ابتدا وارد شوید.');
