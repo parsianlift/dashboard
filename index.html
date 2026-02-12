@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <?!= index_generateHead(); ?>
+  <script src="index.js"></script>  <!-- اول functionها لود می‌شن -->
+  <script>
+    document.write(index_generateHead());
+  </script>
 </head>
 <body>
-    <?!= index_generateBody(); ?>
-    <?!= index_generateJavaScript(); ?>
+  <script>
+    document.write(index_generateBody());
+    document.write(index_generateJavaScript());
+  </script>
 </body>
 </html>

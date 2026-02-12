@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <?!= login_generateHead(); ?>
+  <script src="login.js"></script>  <!-- اول functionها لود می‌شن -->
+  <script>
+    document.write(login_generateHead());
+  </script>
 </head>
 <body>
-    <?!= login_generateBody(); ?>
-    <?!= login_generateJavaScript(); ?>
+  <script>
+    document.write(login_generateBody());
+    document.write(login_generateJavaScript());
+  </script>
 </body>
 </html>
