@@ -164,3 +164,118 @@ function index_generateBody() {
     </div>
   `;
 }
+
+//new 
+
+// index.js (index.gs)
+
+function index_generateHead() {
+  return `
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت پارسیان لیفت - داشبورد</title>
+    
+    <link rel="preconnect" href="https://fonts.rastikerdar.com">
+    <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
+
+    <style>
+      body { 
+        font-family: 'Vazir', Tahoma, sans-serif; 
+        background: #f0f2f5; 
+        margin: 0; 
+        padding: 20px; 
+        direction: rtl; 
+        font-size: 16px; 
+        line-height: 1.5; 
+      }
+      h1 { 
+        text-align: center; 
+        color: #333; 
+        margin: 20px 0 40px; 
+        font-size: 28px; 
+      }
+      .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+      }
+
+      button.service-btn { 
+        display: block;
+        margin: 30px auto;
+        padding: 16px 40px;
+        background: #6c757d; 
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        font-size: 18px; 
+        min-height: 48px;
+        width: fit-content;
+        box-sizing: border-box;
+        transition: background 0.3s ease;
+      }
+      button.service-btn:hover { 
+        background: #5a6268; 
+      }
+
+      /* استایل جدید برای wrapper داشبورد */
+      .dashboard-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* اسکرول نرم در iOS */
+        margin: 50px 0;
+        padding: 10px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+
+      @media (max-width: 480px) {
+        body { 
+          padding: 15px; 
+        }
+        h1 { 
+          font-size: 24px; 
+          margin-bottom: 30px; 
+        }
+        button.service-btn { 
+          width: 100%; 
+          margin: 30px 0; 
+          padding: 16px; 
+          font-size: 16px; 
+        }
+        .dashboard-wrapper {
+          padding: 5px;
+          margin: 40px 0;
+        }
+      }
+    </style>
+  `;
+}
+
+function index_generateBody() {
+  return `
+    <div class="container">
+      <h1>مدیریت پارسیان لیفت</h1>
+      
+      ${sabteServiceButton()}
+      ${modiriatKhadamatButton()}
+      ${gozareshButton()}  <!-- دکمه گزارش نگه داشته شد -->
+
+      <!-- بخش جدید: iframe داشبورد با اسکرول افقی -->
+      <h2 style="text-align: center; color: #333; margin-top: 60px;">پنل گزارش مالی سرویس ماهیانه</h2>
+      <div class="dashboard-wrapper">
+        <iframe 
+          src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS"
+          width="1400" 
+          height="600" 
+          style="border: none;" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+    </div>
+  `;
+}
+
+// بقیه توابع بدون تغییر (sabteServiceButton, modiriatKhadamatButton, gozareshButton, etc.)
+// فقط gozareshButton رو اگر بخوای در تب جدید باز بشه می‌تونی onclick رو به target="_blank" تغییر بدی
