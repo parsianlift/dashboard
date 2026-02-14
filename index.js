@@ -167,14 +167,13 @@ function index_generateBody() {
 
 //new 
 
-// index.js (index.gs)
-
 function index_generateHead() {
   return `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدیریت پارسیان لیفت - داشبورد</title>
     
+    <!-- فونت وزیر -->
     <link rel="preconnect" href="https://fonts.rastikerdar.com">
     <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
 
@@ -218,7 +217,7 @@ function index_generateHead() {
         background: #5a6268; 
       }
 
-      /* استایل جدید برای wrapper داشبورد */
+      /* wrapper داشبورد */
       .dashboard-wrapper {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch; /* اسکرول نرم در iOS */
@@ -227,6 +226,7 @@ function index_generateHead() {
         background: white;
         border-radius: 12px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        direction: ltr; /* برای اسکرول طبیعی داشبورد */
       }
 
       @media (max-width: 480px) {
@@ -257,17 +257,20 @@ function index_generateBody() {
     <div class="container">
       <h1>مدیریت پارسیان لیفت</h1>
       
+      <!-- دکمه‌های اصلی -->
       ${sabteServiceButton()}
       ${modiriatKhadamatButton()}
-      ${gozareshButton()}  <!-- دکمه گزارش نگه داشته شد -->
+      ${gozareshButton()}
 
-      <!-- بخش جدید: iframe داشبورد با اسکرول افقی -->
-      <h2 style="text-align: center; color: #333; margin-top: 60px;">پنل گزارش مالی سرویس ماهیانه</h2>
+      <!-- عنوان داشبورد -->
+      <h2 style="text-align: center; color: #333; margin-top: 60px; direction: rtl;">پنل گزارش مالی سرویس ماهیانه</h2>
+      
+      <!-- iframe داشبورد با اندازه طبیعی و اسکرول افقی -->
       <div class="dashboard-wrapper">
         <iframe 
-          src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS"
-          width="1400" 
-          height="600" 
+          src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
+          width="1200" 
+          height="700" 
           style="border: none;" 
           allowfullscreen>
         </iframe>
@@ -276,6 +279,3 @@ function index_generateBody() {
     </div>
   `;
 }
-
-// بقیه توابع بدون تغییر (sabteServiceButton, modiriatKhadamatButton, gozareshButton, etc.)
-// فقط gozareshButton رو اگر بخوای در تب جدید باز بشه می‌تونی onclick رو به target="_blank" تغییر بدی
