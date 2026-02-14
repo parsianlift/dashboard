@@ -4,97 +4,6 @@ function index_generateHead() {
   return `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نمایشگر موبایل - داشبورد</title>
-    <style>
-      body { font-family: Tahoma, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; direction: rtl; }
-      h1 { text-align: center; color: #333; margin-bottom: 30px; }
-      .container { max-width: 1200px; margin: 0 auto; position: relative; }
-      table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
-      th, td { padding: 12px; text-align: center; border-bottom: 1px solid #ddd; }
-      th { background: #007bff; color: white; }
-      .online { color: green; font-weight: bold; }
-      .offline { color: red; font-weight: bold; }
-      .battery { font-size: 1.2em; }
-      button.logout { 
-        position: absolute; top: 20px; left: 20px; padding: 10px 20px; 
-        background: #dc3545; color: white; border: none; border-radius: 5px; 
-        cursor: pointer; font-size: 14px; 
-      }
-      button.logout:hover { background: #c82333; }
-    </style>
-  `;
-}
-
-function index_generateHead() {
-  return `
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدیریت پارسیان لیفت - داشبورد</title>
-    <style>
-      body { 
-        font-family: 'Vazir', Tahoma, sans-serif;
-        background: #f0f2f5; 
-        margin: 0; 
-        padding: 20px; 
-        direction: rtl; 
-        font-size: 16px; 
-        line-height: 1.5; 
-      }
-      h1 { 
-        text-align: center; 
-        color: #333; 
-        margin: 20px 0 40px; 
-        font-size: 28px; 
-      }
-      .container { 
-        max-width: 1200px; 
-        margin: 0 auto; 
-      }
-
-      /* استایل دکمه ثبت سرویس - مناسب برای دسکتاپ و موبایل */
-      button.service-btn { 
-        display: block;
-        margin: 30px auto;
-        padding: 16px 40px;
-        background: #6c757d; 
-        color: white; 
-        border: none; 
-        border-radius: 8px; 
-        cursor: pointer; 
-        font-size: 18px; 
-        min-height: 48px;
-        width: fit-content;
-        box-sizing: border-box;
-        transition: background 0.3s ease;
-      }
-      button.service-btn:hover { 
-        background: #5a6268; 
-      }
-
-      /* تنظیمات responsive برای موبایل (تا 480px) */
-      @media (max-width: 480px) {
-        body { 
-          padding: 15px; 
-        }
-        h1 { 
-          font-size: 24px; 
-          margin-bottom: 30px; 
-        }
-        button.service-btn { 
-          width: 100%; 
-          margin: 30px 0; 
-          padding: 16px; 
-          font-size: 16px; 
-        }
-      }
-    </style>
-  `;
-}
-
-function index_generateHead() {
-  return `
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدیریت پارسیان لیفت - داشبورد</title>
     
     <!-- اضافه کردن فونت وزیر از CDN رسمی -->
@@ -221,17 +130,8 @@ function sabteServiceButton() {
 function modiriatKhadamatButton() {
   return `
     <button class="service-btn" 
-            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec">
-       مدیریت خدمات
-    </button>
-  `;
-}
-
-function modiriatKhadamatButton03() {
-  return `
-    <button class="service-btn" 
-            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec">
-       مدیریت خدمات
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec';">
+      مدیریت خدمات
     </button>
   `;
 }
