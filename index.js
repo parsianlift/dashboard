@@ -226,3 +226,12 @@ function modiriatKhadamatButton() {
     </button>
   `;
 }
+
+function modiriatKhadamatButton02() {
+  return `
+    <button class="service-btn" 
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec">
+       مدیریت خدمات
+    </button>
+  `;
+}
