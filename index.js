@@ -141,7 +141,7 @@ function gozareshButton() {
   return `
     <button class="service-btn" 
             onclick="window.location.href='https://lookerstudio.google.com/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS';">
-      گزارش‌ها
+     پنل گزارش مالی سرویس ماهیانه 
     </button>
   `;
 }
