@@ -135,3 +135,32 @@ function modiriatKhadamatButton() {
     </button>
   `;
 }
+
+// تابع جدید برای دکمه گزارش‌ها (Looker Studio Dashboard)
+function gozareshButton() {
+  return `
+    <button class="service-btn" 
+            onclick="window.location.href='https://lookerstudio.google.com/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS';">
+      گزارش‌ها
+    </button>
+  `;
+}
+
+// ویرایش تابع index_generateBody برای اضافه کردن دکمه جدید
+function index_generateBody() {
+  return `
+    <div class="container">
+      <h1>مدیریت پارسیان لیفت</h1>
+      
+      <!-- دکمه ثبت سرویس -->
+      ${sabteServiceButton()}
+
+      <!-- دکمه مدیریت خدمات -->
+      ${modiriatKhadamatButton()}
+
+      <!-- دکمه جدید گزارش‌ها (Looker Studio) -->
+      ${gozareshButton()}
+      
+    </div>
+  `;
+}
