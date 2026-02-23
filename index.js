@@ -358,3 +358,65 @@ function generateBody() {
     ${sharedFooter()}
   `;
 }
+
+function homeContent() {
+  return `
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      پنل گزارش مالی سرویس ماهیانه
+    </h1>
+    
+    <div class="dashboard-wrapper">
+      <iframe 
+        src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <button class="service-btn" 
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
+      ثبت سرویس جدید
+    </button>
+    
+    <button class="service-btn" 
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec'">
+      مدیریت همه خدمات
+    </button>
+  `;
+}
+
+function homeContent() {
+  return `
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      پنل گزارش مالی سرویس ماهیانه
+    </h1>
+    
+    <div class="dashboard-wrapper">
+      <div id="looker-container"></div>
+    </div>
+
+    <button class="service-btn" 
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
+      ثبت سرویس جدید
+    </button>
+    
+    <button class="service-btn" 
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec'">
+      مدیریت همه خدمات
+    </button>
+  `;
+}
+
+
+
+function databaseContent() {
+  return ``;
+}
+
+function servicesContent() {
+  return ``;
+}
+
+function othersContent() {
+  return ``;
+}
+
