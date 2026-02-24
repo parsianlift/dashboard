@@ -186,7 +186,7 @@ function sharedJavaScript() {
           localStorage.removeItem("loginTime");
           window.location.replace("login.html");
         } else {
-          loadPage('home'); // بارگذاری اولیه صفحه خانه
+          loadPage('home');
         }
       });
 
@@ -199,143 +199,29 @@ function sharedJavaScript() {
       function loadPage(page) {
         const contentDiv = document.getElementById('page-content');
         let content = '';
-        let title = '';
 
-        // بروزرسانی کلاس active در منو
+        // فعال کردن تب
         document.querySelectorAll('.main-menu button').forEach(btn => {
           btn.classList.remove('active');
         });
         document.getElementById('menu-' + page).classList.add('active');
 
-        // بروزرسانی عنوان صفحه
+        // انتخاب محتوا
         switch(page) {
-          case 'home':
-            title = 'مدیریت پارسیان لیفت - داشبورد';
-            content = homeContent();
-            break;
-          case 'database':
-            title = 'مدیریت پارسیان لیفت - اطلاعات ساختمان';
-            content = databaseContent();
-            break;
-          case 'services':
-            title = 'مدیریت پارسیان لیفت - سرویس';
-            content = servicesContent();
-            break;
-          case 'others':
-            title = 'مدیریت پارسیان لیفت - خدمات';
-            content = othersContent();
-            break;
+          case 'home':     content = homeContent(); break;
+          case 'database': content = databaseContent(); break;
+          case 'services': content = servicesContent(); break;
+          case 'others':   content = othersContent(); break;
         }
 
-        document.title = title;
         contentDiv.innerHTML = content;
       }
 
-      function homeContent() {
-        return \`
-          <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-            پنل گزارش مالی سرویس ماهیانه
-          </h1>
-          
-          <div class="dashboard-wrapper">
-            <iframe 
-              src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <button class="service-btn" 
-                  onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
-            ثبت سرویس جدید
-          </button>
-          
-          <button class="service-btn" 
-                  onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec'">
-            مدیریت همه خدمات
-          </button>
-        \`;
-      }
-
-      function databaseContent() {
-        return \`
-          <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-            پایگاه داده اطلاعات ساختمان‌ها
-          </h1>
-          
-          <!-- محتوای خاص صفحه اطلاعات ساختمان -->
-          <div class="dashboard-wrapper">
-            <!-- مثلاً یک iframe برای نمایش دیتابیس یا جدول ساختمان‌ها -->
-            <iframe 
-              src="https://your-database-embed-url-here"  <!-- لینک واقعی را جایگزین کنید -->
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <button class="service-btn" 
-                  onclick="window.location.href='add-building.html'">
-            افزودن ساختمان جدید
-          </button>
-          
-          <button class="service-btn" 
-                  onclick="window.location.href='search-buildings.html'">
-            جستجو و ویرایش ساختمان‌ها
-          </button>
-        \`;
-      }
-
-      function servicesContent() {
-        return \`
-          <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-            مدیریت سرویس‌های ماهیانه
-          </h1>
-          
-          <!-- محتوای خاص صفحه سرویس -->
-          <div class="dashboard-wrapper">
-            <!-- مثلاً یک iframe برای نمایش سرویس‌ها یا لیست -->
-            <iframe 
-              src="https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <button class="service-btn" 
-                  onclick="window.location.href='register-service.html'">
-            ثبت سرویس جدید
-          </button>
-          
-          <button class="service-btn" 
-                  onclick="window.location.href='manage-services.html'">
-            مدیریت سرویس‌ها
-          </button>
-        \`;
-      }
-
-      function othersContent() {
-        return \`
-          <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-            مدیریت سایر خدمات
-          </h1>
-          
-          <!-- محتوای خاص صفحه خدمات -->
-          <div class="dashboard-wrapper">
-            <!-- مثلاً یک iframe برای نمایش خدمات دیگر یا لیست -->
-            <iframe 
-              src="https://your-other-services-embed-url-here"  <!-- لینک واقعی را جایگزین کنید -->
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <button class="service-btn" 
-                  onclick="window.location.href='add-other-service.html'">
-            افزودن خدمت جدید
-          </button>
-          
-          <button class="service-btn" 
-                  onclick="window.location.href='manage-others.html'">
-            مدیریت خدمات
-          </button>
-        \`;
-      }
+      // ==================== توابع محتوا اینجا inject می‌شن ====================
+      ${homeContent.toString()}
+      ${databaseContent.toString()}
+      ${servicesContent.toString()}
+      ${othersContent.toString()}
     </script>
   `;
 }
@@ -359,8 +245,38 @@ function generateBody() {
   `;
 }
 
+// ====================== محتوای صفحات (جداگانه و خوانا) ======================
+
 function homeContent() {
   return `
+    
+
+    
+    
+    
+  `;
+}
+
+function databaseContent() {
+  return `
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      پایگاه داده اطلاعات ساختمان‌ها
+    </h1>
+    <div class="dashboard-wrapper">
+      <p>محتوای صفحه اطلاعات ساختمان در حال توسعه...</p>
+    </div>
+  `;
+}
+
+function servicesContent() {
+  return `
+
+
+    <button class="service-btn" 
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
+      ثبت سرویس جدید
+    </button>
+
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
       پنل گزارش مالی سرویس ماهیانه
     </h1>
@@ -368,55 +284,33 @@ function homeContent() {
     <div class="dashboard-wrapper">
       <iframe 
         src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
+        width="1250"
+        height="660"
+        style="border: none; min-width: 1250px; display: block;"
         allowfullscreen>
       </iframe>
     </div>
 
-    <button class="service-btn" 
-            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
-      ثبت سرویس جدید
-    </button>
-    
-    <button class="service-btn" 
-            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec'">
-      مدیریت همه خدمات
-    </button>
-  `;
-}
 
-function homeContent() {
-  return `
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      پنل گزارش مالی سرویس ماهیانه
+      مدیریت سرویس‌های ماهیانه
     </h1>
-    
     <div class="dashboard-wrapper">
-      <div id="looker-container"></div>
+      <p>محتوای صفحه سرویس در حال توسعه...</p>
     </div>
-
-    <button class="service-btn" 
-            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
-      ثبت سرویس جدید
-    </button>
-    
-    <button class="service-btn" 
-            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec'">
-      مدیریت همه خدمات
-    </button>
   `;
-}
-
-
-
-function databaseContent() {
-  return ``;
-}
-
-function servicesContent() {
-  return ``;
 }
 
 function othersContent() {
-  return ``;
-}
+  return `
 
+<h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+    <button class="service-btn" 
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec'">
+      مدیریت همه خدمات
+    </button>
+
+
+   
+  `;
+}
