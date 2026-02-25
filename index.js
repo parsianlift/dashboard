@@ -1,287 +1,5 @@
 //-- index.js
 // ====================== کامپوننت‌های مشترک ======================
-function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
-  return `
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=414, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>${pageTitle}</title>
-    
-    <!-- فونت وزیر -->
-    <link rel="preconnect" href="https://fonts.rastikerdar.com">
-    <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
-
-    <style>
-      * { box-sizing: border-box; }
-      
-      /* قفل عرض ۳۷۵px حتی روی دسکتاپ */
-      html, body {
-        width: 414px !important;
-        max-width: 414px !important;
-        margin: 0 auto !important;
-        overflow-x: hidden !important;
-        background: #f0f2f5;
-      }
-      
-      body { 
-        font-family: 'Vazir', Tahoma, sans-serif; 
-        padding: 0; 
-        direction: rtl; 
-        font-size: 16px; 
-        line-height: 1.6; 
-        min-height: 100vh;
-      }
-      
-      .container {
-        width: 100%;
-        max-width: 414px;
-        margin: 0 auto;
-        padding: 15px;
-      }
-
-      /* هدر مشترک */
-      .header {
-        background: #1e3a8a;
-        color: white;
-        padding: 15px;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-      .header .logo { font-size: 22px; font-weight: bold; margin-bottom: 5px; }
-      .header .title { font-size: 18px; opacity: 0.95; }
-      .logout-btn {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        background: rgba(255,255,255,0.2);
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 6px;
-        font-size: 14px;
-        cursor: pointer;
-      }
-
-      /* منوی مشترک */
-      .main-menu {
-        display: flex;
-        background: white;
-        border-bottom: 1px solid #ddd;
-        margin: 0 -15px 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      }
-      .main-menu button {
-        flex: 1;
-        padding: 14px 8px;
-        background: none;
-        border: none;
-        font-size: 15px;
-        cursor: pointer;
-        border-bottom: 3px solid transparent;
-      }
-      .main-menu button.active {
-        border-bottom: 3px solid #1e3a8a;
-        color: #1e3a8a;
-        font-weight: bold;
-      }
-
-      button.service-btn { 
-        display: block;
-        margin: 20px auto;
-        padding: 16px 30px;
-        background: #6c757d; 
-        color: white; 
-        border: none; 
-        border-radius: 8px; 
-        cursor: pointer; 
-        font-size: 17px; 
-        width: 100%;
-        min-height: 52px;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-      }
-      button.service-btn:hover { 
-        background: #5a6268; 
-        transform: translateY(-2px);
-      }
-
-      /* داشبورد */
-      .dashboard-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        padding: 10px;
-        margin: 30px 0;
-      }
-      .dashboard-wrapper iframe {
-        width: 100% !important;
-        height: 680px;
-        border: none;
-      }
-
-      /* فوتر مشترک */
-      footer {
-        background: #1e3a8a;
-        color: #ddd;
-        text-align: center;
-        padding: 20px 15px;
-        font-size: 14px;
-        margin-top: 40px;
-        line-height: 1.5;
-      }
-      footer a { color: #ddd; text-decoration: none; }
-    </style>
-  `;
-}
-
-function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
-  return `
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=414, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>${pageTitle}</title>
-    
-    <!-- فونت وزیر -->
-    <link rel="preconnect" href="https://fonts.rastikerdar.com">
-    <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
-
-    <style>
-      * { box-sizing: border-box; }
-      
-      /* قفل عرض ۴۱۴px حتی روی دسکتاپ */
-      html, body {
-        width: 414px !important;
-        max-width: 414px !important;
-        margin: 0 auto !important;
-        overflow-x: hidden !important;
-        background: #f0f2f5;
-      }
-      
-      body { 
-        font-family: 'Vazir', Tahoma, sans-serif; 
-        padding: 0; 
-        direction: rtl; 
-        font-size: 16px; 
-        line-height: 1.6; 
-        min-height: 100vh;
-      }
-      
-      .container {
-        width: 100%;
-        max-width: 414px;
-        margin: 0 auto;
-        padding: 15px;
-      }
-
-      /* هدر مشترک */
-      .header {
-        background: #1e3a8a;
-        color: white;
-        padding: 15px;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-      .header .logo-img { 
-        height: 58px; 
-        width: auto; 
-        max-width: 240px; 
-        display: block; 
-        margin: 8px auto 6px auto; 
-        border-radius: 6px; 
-      }
-      .header .title { font-size: 18px; opacity: 0.95; }
-      .logout-btn {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        background: rgba(255,255,255,0.2);
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 6px;
-        font-size: 14px;
-        cursor: pointer;
-      }
-
-      /* منوی مشترک */
-      .main-menu {
-        display: flex;
-        background: white;
-        border-bottom: 1px solid #ddd;
-        margin: 0 -15px 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      }
-      .main-menu button {
-        flex: 1;
-        padding: 14px 8px;
-        background: none;
-        border: none;
-        font-size: 15px;
-        cursor: pointer;
-        border-bottom: 3px solid transparent;
-      }
-      .main-menu button.active {
-        border-bottom: 3px solid #1e3a8a;
-        color: #1e3a8a;
-        font-weight: bold;
-      }
-
-      button.service-btn { 
-        display: block;
-        margin: 20px auto;
-        padding: 16px 30px;
-        background: #6c757d; 
-        color: white; 
-        border: none; 
-        border-radius: 8px; 
-        cursor: pointer; 
-        font-size: 17px; 
-        width: 100%;
-        min-height: 52px;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-      }
-      button.service-btn:hover { 
-        background: #5a6268; 
-        transform: translateY(-2px);
-      }
-
-      /* داشبورد */
-      .dashboard-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        padding: 10px;
-        margin: 30px 0;
-      }
-      .dashboard-wrapper iframe {
-        width: 100% !important;
-        height: 680px;
-        border: none;
-      }
-
-      /* فوتر مشترک */
-      footer {
-        background: #1e3a8a;
-        color: #ddd;
-        text-align: center;
-        padding: 20px 15px;
-        font-size: 14px;
-        margin-top: 40px;
-        line-height: 1.5;
-      }
-      footer a { color: #ddd; text-decoration: none; }
-    </style>
-  `;
-}
 
 function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
   return `
@@ -356,26 +74,33 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
 
       /* منوی مشترک */
       .main-menu {
-        display: flex;
-        background: white;
-        border-bottom: 1px solid #ddd;
-        margin: 0 -15px 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      }
-      .main-menu button {
-        flex: 1;
-        padding: 14px 8px;
-        background: none;
-        border: none;
-        font-size: 15px;
-        cursor: pointer;
-        border-bottom: 3px solid transparent;
-      }
-      .main-menu button.active {
-        border-bottom: 3px solid #1e3a8a;
-        color: #1e3a8a;
-        font-weight: bold;
-      }
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 414px;
+  max-width: 414px;
+  display: flex;
+  background: white;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+  z-index: 999;
+}
+
+.main-menu button {
+  flex: 1;
+  padding: 10px 5px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  border-top: 3px solid transparent;
+}
+
+.main-menu button.active {
+  border-top: 3px solid #1e3a8a;
+  color: #1e3a8a;
+  font-weight: bold;
+}
 
       button.service-btn { 
         display: block;
@@ -432,16 +157,6 @@ function sharedHeader() {
   return `
     <div class="header">
       <button class="logout-btn" onclick="logout()">خروج</button>
-      <div class="logo">🛗 آسانسور پارسیان لیفت</div>
-      <div class="title">داشبورد مدیریت</div>
-    </div>
-  `;
-}
-
-function sharedHeader() {
-  return `
-    <div class="header">
-      <button class="logout-btn" onclick="logout()">خروج</button>
       
       <!-- لوگو از GitHub -->
       <img 
@@ -454,7 +169,8 @@ function sharedHeader() {
   `;
 }
 
-function sharedMenu(activePage = 'home') {
+
+function sharedMenu(activePage = "home") {
   return `
     <div class="main-menu">
       <button id="menu-home" onclick="loadPage('home')">خانه</button>
