@@ -156,15 +156,23 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
 function sharedHeader() {
   return `
     <div class="header">
-      <button class="logout-btn" onclick="logout()">خروج</button>
-      
-      <!-- لوگو از GitHub -->
-      <img 
-        src="https://raw.githubusercontent.com/parsianlift/dashboard/main/photo/LogoCapture.JPG" 
-        class="logo-img" 
-        alt="لوگو پارسیان لیفت">
-      
-      <div class="title">داشبورد مدیریت</div>
+      <div class="header-brand">
+        <img 
+          src="https://raw.githubusercontent.com/parsianlift/dashboard/main/photo/LogoCapture.JPG" 
+          class="logo-img" 
+          alt="لوگو پارسیان لیفت">
+        <div class="title">داشبورد مدیریت پارسیان لیفت</div>
+      </div>
+      <div class="header-menu-wrap">
+        <button id="menu-more" class="menu-hamburger top-hamburger" onclick="toggleMoreMenu()" aria-label="منوی بیشتر">
+          <span class="hamburger-lines"><span></span><span></span><span></span></span>
+        </button>
+        <div id="more-menu" class="more-menu">
+          <button id="menu-hoghogh" onclick="loadPage('hoghogh')">حقوق</button>
+          <button id="menu-bime" onclick="loadPage('bime')">بیمه</button>
+          <button onclick="logout()">خروج</button>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -176,7 +184,6 @@ function sharedMenu(activePage = "home") {
       <button id="menu-database" onclick="loadPage('database')">ساختمان</button>
       <button id="menu-services" onclick="loadPage('services')">سرویس</button>
       <button id="menu-others" onclick="loadPage('others')">خدمات</button>
-      <button id="menu-hoghogh" onclick="loadPage('hoghogh')">حقوق</button>
     </div>
   `;
 }
@@ -226,35 +233,45 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
 
       /* Header */
       .header {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
-        color: #fff;
-        padding: 20px 15px;
-        text-align: center;
-        border-radius: 0 0 24px 24px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        width: 100%;
+        margin: 0;
+        background: #e5e7eb;
+        color: #1f2937;
+        padding: 6px 10px;
+        border-radius: 0 0 14px 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
         position: relative;
       }
 
       .logo-img {
-        height: 54px;
-        margin-bottom: 8px;
+        height: 28px;
+        width: auto;
+        margin: 0;
+        border-radius: 5px;
       }
 
       .title {
-        font-size: 18px;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.3;
       }
 
-      .logout-btn {
-        position: absolute;
-        top: 18px;
-        left: 15px;
-        background: rgba(255,255,255,0.2);
-        border: none;
-        color: white;
-        padding: 7px 14px;
-        border-radius: 20px;
-        font-size: 13px;
-        cursor: pointer;
+      .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+        flex: 1;
+      }
+
+      .header-menu-wrap {
+        position: relative;
       }
 
       /* Floating Bottom Menu */
@@ -302,13 +319,91 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
       #menu-database::before { content: "🏢"; }
       #menu-services::before { content: "🔧"; }
       #menu-others::before { content: "📋"; }
-      #menu-hoghogh::before { content: "💰"; }
+      #menu-more::before { content: ""; }
 
       .main-menu button.active {
         background: linear-gradient(135deg, #1e3a8a, #2563eb);
         color: #fff;
         transform: translateY(-6px);
         box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+      }
+
+      .menu-hamburger {
+        padding: 0;
+        border: none;
+        background: #d1d5db;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .top-hamburger.active {
+        background: #1e3a8a;
+      }
+
+      .top-hamburger.active .hamburger-lines span {
+        background: #fff;
+      }
+
+      .hamburger-lines {
+        width: 16px;
+        height: 12px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .hamburger-lines span {
+        width: 100%;
+        height: 2px;
+        background: #374151;
+        border-radius: 2px;
+        display: block;
+      }
+
+      .more-menu {
+        position: absolute;
+        top: 42px;
+        left: 0;
+        width: 170px;
+        background: rgba(255,255,255,0.96);
+        backdrop-filter: blur(14px);
+        border-radius: 14px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.14);
+        padding: 8px;
+        display: none;
+        z-index: 1000;
+      }
+
+      .more-menu.open {
+        display: block;
+      }
+
+      .more-menu button {
+        width: 100%;
+        border: none;
+        background: none;
+        border-radius: 10px;
+        padding: 10px 8px;
+        margin: 4px 0;
+        font-size: 13px;
+        color: #555;
+        cursor: pointer;
+      }
+
+      .more-menu button.active {
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        color: #fff;
+      }
+
+      @media (max-width: 480px) {
+        .header {
+          width: 100%;
+        }
       }
 
       /* Dashboard */
@@ -447,10 +542,16 @@ function sharedJavaScript() {
         let content = '';
 
         // فعال کردن تب
-        document.querySelectorAll('.main-menu button').forEach(btn => {
+        document.querySelectorAll('.main-menu button, .more-menu button, #menu-more').forEach(btn => {
           btn.classList.remove('active');
         });
-        document.getElementById('menu-' + page).classList.add('active');
+        const activeButton = document.getElementById('menu-' + page);
+        if (activeButton) activeButton.classList.add('active');
+        closeMoreMenu();
+        if (page === 'hoghogh' || page === 'bime') {
+          const moreButton = document.getElementById('menu-more');
+          if (moreButton) moreButton.classList.add('active');
+        }
 
         // انتخاب محتوا
         switch(page) {
@@ -458,9 +559,24 @@ function sharedJavaScript() {
           case 'database': content = databaseContent(); break;
           case 'services': content = servicesContent(); break;
           case 'others':   content = othersContent(); break;
+          case 'hoghogh':  content = hoghoghContent(); break;
+          case 'bime':     content = bimeContent(); break;
+          default:         content = servicesContent(); break;
         }
 
         contentDiv.innerHTML = content;
+      }
+
+      function toggleMoreMenu() {
+        const menu = document.getElementById('more-menu');
+        if (!menu) return;
+        menu.classList.toggle('open');
+      }
+
+      function closeMoreMenu() {
+        const menu = document.getElementById('more-menu');
+        if (!menu) return;
+        menu.classList.remove('open');
       }
 
       // ==================== توابع محتوا اینجا inject می‌شن ====================
@@ -468,6 +584,8 @@ function sharedJavaScript() {
       ${databaseContent.toString()}
       ${servicesContent.toString()}
       ${othersContent.toString()}
+      ${hoghoghContent.toString()}
+      ${bimeContent.toString()}
     </script>
   `;
 }
@@ -627,6 +745,34 @@ function servicesContent() {
         </iframe>
       </div>
     </div>
+
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      گزارش بازدید اول
+    </h1>
+
+    <div class="dashboard-wrapper iframe-undone-wrapper">
+      <div class="iframe-fit iframe-undone">
+        <iframe
+          src="https://lookerstudio.google.com/embed/reporting/a0ec3518-6810-4577-89d1-0efa3dbb261b/page/z11kB"
+          width="100%"
+          height="320"
+          scrolling="no"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="dashboard-wrapper iframe-undone-wrapper">
+      <div class="iframe-fit iframe-undone">
+        <iframe
+          src="https://lookerstudio.google.com/embed/reporting/b45189d9-98a3-4c01-a681-bbc3ed54410a/page/wgrnB"
+          width="100%"
+          height="320"
+          scrolling="no"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
   `;
 }
 
@@ -647,13 +793,17 @@ function othersContent() {
 function hoghoghContent() {
   return `
     <div class="dashboard-wrapper">
-      <iframe 
-        src="لینک-مورد-نظر-اینجا-قرار-بگیرد"
-        width="1250"
-        height="660"
-        style="border: none; min-width: 1250px; display: block;"
-        allowfullscreen>
-      </iframe>
+      <h1 style="text-align:center; color:#1e3a8a; margin:20px 0; font-size:22px;">صفحه حقوق</h1>
+      <p style="text-align:center; margin:0;">محتوای حقوق بعدا اضافه می‌شود.</p>
+    </div>
+  `;
+}
+
+function bimeContent() {
+  return `
+    <div class="dashboard-wrapper">
+      <h1 style="text-align:center; color:#1e3a8a; margin:20px 0; font-size:22px;">صفحه بیمه</h1>
+      <p style="text-align:center; margin:0;">محتوای بیمه بعدا اضافه می‌شود.</p>
     </div>
   `;
 }
