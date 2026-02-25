@@ -182,6 +182,197 @@ function sharedMenu(activePage = "home") {
   `;
 }
 
+function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
+  return `
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${pageTitle}</title>
+
+    <!-- فونت وزیر -->
+    <link rel="preconnect" href="https://fonts.rastikerdar.com">
+    <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
+
+    <style>
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #f2f4f8;
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        font-family: "Vazir", Tahoma, sans-serif;
+      }
+
+      .container {
+        width: 414px;
+        max-width: 414px;
+        min-height: 100vh;
+        padding: 15px;
+        padding-bottom: 120px;
+      }
+
+      /* ================= Header ================= */
+
+      .header {
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        color: #fff;
+        padding: 20px 15px;
+        text-align: center;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        position: relative;
+      }
+
+      .logo-img {
+        height: 54px;
+        margin-bottom: 8px;
+      }
+
+      .title {
+        font-size: 18px;
+        opacity: 0.95;
+      }
+
+      .logout-btn {
+        position: absolute;
+        top: 18px;
+        left: 15px;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+      }
+
+      /* ================= Modern Floating Bottom Menu 2026 ================= */
+
+      .main-menu {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 390px;
+        height: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: rgba(255,255,255,0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 30px;
+        box-shadow:
+          0 15px 35px rgba(0,0,0,0.15),
+          inset 0 1px 1px rgba(255,255,255,0.5);
+        padding: 0 10px;
+        z-index: 999;
+      }
+
+      .main-menu button {
+        flex: 1;
+        height: 60px;
+        border: none;
+        background: none;
+        font-size: 11px;
+        font-family: inherit;
+        color: #777;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        border-radius: 18px;
+        transition: all 0.25s ease;
+      }
+
+      .main-menu button::before {
+        font-size: 20px;
+      }
+
+      #menu-home::before { content: "🏠"; }
+      #menu-database::before { content: "🏢"; }
+      #menu-services::before { content: "🔧"; }
+      #menu-others::before { content: "📋"; }
+      #menu-hoghogh::before { content: "💰"; }
+
+      .main-menu button.active {
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        color: #fff;
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+      }
+
+      .main-menu button.active::before {
+        transform: scale(1.15);
+      }
+
+      /* ================= Buttons ================= */
+
+      .service-btn {
+        display: block;
+        margin: 25px auto;
+        padding: 16px 30px;
+        background: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 14px;
+        font-size: 16px;
+        width: 100%;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        transition: 0.25s;
+      }
+
+      .service-btn:hover {
+        transform: translateY(-3px);
+        background: #5a6268;
+      }
+
+      /* ================= Dashboard Wrapper ================= */
+
+      .dashboard-wrapper {
+        background: white;
+        border-radius: 18px;
+        padding: 18px;
+        margin: 25px 0;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      }
+
+      .dashboard-wrapper iframe {
+        border: none;
+        width: 100%;
+      }
+
+      /* ================= Footer ================= */
+
+      footer {
+        background: linear-gradient(135deg, #ff6600, #ff8533);
+        color: #fff;
+        text-align: center;
+        padding: 18px 15px;
+        font-size: 14px;
+        border-radius: 24px 24px 0 0;
+        margin-top: 40px;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+  `;
+}
+
 function sharedFooter() {
   return `
     <footer>
