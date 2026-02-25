@@ -384,7 +384,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-    <link rel="manifest" href="manifest-v2.json">
+    <link rel="manifest" href="manifest-v3.json">
 
     <title>${pageTitle}</title>
 
@@ -555,10 +555,10 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="manifest" href="manifest-v2.json">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32-v2.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16-v2.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-v2.png">
+    <link rel="manifest" href="manifest-v3.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32-v3.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16-v3.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-v3.png">
 
     <title>${pageTitle}</title>
 
