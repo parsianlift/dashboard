@@ -689,6 +689,38 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         border: none;
       }
 
+      .iframe-scroll-x {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .iframe-scroll-x iframe {
+        width: 1250px !important;
+        max-width: none !important;
+        min-width: 1250px;
+        display: block;
+        margin: 0;
+        border: none;
+      }
+
+      .iframe-fit {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .iframe-fit iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        display: block;
+        margin: 0 !important;
+        border: none;
+      }
+
       /* Buttons */
       .service-btn {
         display: block;
@@ -965,12 +997,11 @@ function servicesContent() {
     </h1>
 
     <div class="dashboard-wrapper">
-      <div style="width:625px; height:330px; max-width:100%; overflow:hidden; margin:auto;">
+      <div class="iframe-scroll-x">
         <iframe
           src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
           width="1250"
-          height="660"
-          style="border:none; display:block; width:1250px !important; max-width:none !important; transform:scale(0.5); transform-origin:top right;"
+          height="700"
           allowfullscreen>
         </iframe>
       </div>
@@ -981,12 +1012,11 @@ function servicesContent() {
     </h1>
 
     <div class="dashboard-wrapper">
-      <div style="width:625px; height:330px; max-width:100%; overflow:hidden; margin:auto;">
+      <div class="iframe-fit">
         <iframe
           src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
-          width="1250"
-          height="900"
-          style="border:none; display:block; width:1250px !important; max-width:none !important; transform:scale(0.35); transform-origin:top right;"
+          width="100%"
+          height="540"
           allowfullscreen>
         </iframe>
       </div>
