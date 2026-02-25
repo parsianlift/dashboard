@@ -458,9 +458,10 @@ function sharedMenu(activePage = 'home') {
   return `
     <div class="main-menu">
       <button id="menu-home" onclick="loadPage('home')">خانه</button>
-      <button id="menu-database" onclick="loadPage('database')">اطلاعات ساختمان</button>
+      <button id="menu-database" onclick="loadPage('database')">ساختمان</button>
       <button id="menu-services" onclick="loadPage('services')">سرویس</button>
       <button id="menu-others" onclick="loadPage('others')">خدمات</button>
+      <button id="menu-hoghogh" onclick="loadPage('hoghogh')">حقوق</button>
     </div>
   `;
 }
@@ -557,7 +558,6 @@ function homeContent() {
   return `
     <div class="dashboard-wrapper">
       <iframe 
-        
         
         src="https://app.hesabfa.com/app/da07d4bd9ae2683af5d898561717c8f5y8/dashboard"
         width="1250"
