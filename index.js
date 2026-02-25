@@ -556,16 +556,7 @@ function generateBody() {
 
 function homeContent() {
   return `
-    <div class="dashboard-wrapper">
-      <iframe 
-        
-        src="https://app.hesabfa.com/app/da07d4bd9ae2683af5d898561717c8f5y8/dashboard"
-        width="1250"
-        height="660"
-        style="border: none; min-width: 1250px; display: block;"
-        allowfullscreen>
-      </iframe>
-    </div>
+    
     
   `;
 }
@@ -603,6 +594,22 @@ function servicesContent() {
         allowfullscreen>
       </iframe>
     </div>
+
+    // سرویس ماهانه انجام نشده 
+    <iframe 
+  src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
+  width="1200"
+  height="660"
+  style="
+    border: none;
+    min-width: 1200px;
+    display: block;
+    transform: scale(0.35);
+    transform-origin: top right;
+  "
+  allowfullscreen>
+</iframe>
+
 
 
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
