@@ -169,7 +169,6 @@ function sharedHeader() {
   `;
 }
 
-
 function sharedMenu(activePage = "home") {
   return `
     <div class="main-menu">
@@ -179,369 +178,6 @@ function sharedMenu(activePage = "home") {
       <button id="menu-others" onclick="loadPage('others')">خدمات</button>
       <button id="menu-hoghogh" onclick="loadPage('hoghogh')">حقوق</button>
     </div>
-  `;
-}
-
-function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
-  return `
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${pageTitle}</title>
-
-    <!-- فونت وزیر -->
-    <link rel="preconnect" href="https://fonts.rastikerdar.com">
-    <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
-
-    <style>
-      * {
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      html, body {
-        margin: 0;
-        padding: 0;
-        background: #f2f4f8;
-        height: 100%;
-      }
-
-      body {
-        display: flex;
-        justify-content: center;
-        font-family: "Vazir", Tahoma, sans-serif;
-      }
-
-      .container {
-        width: 414px;
-        max-width: 414px;
-        min-height: 100vh;
-        padding: 15px;
-        padding-bottom: 120px;
-      }
-
-      /* ================= Header ================= */
-
-      .header {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
-        color: #fff;
-        padding: 20px 15px;
-        text-align: center;
-        border-radius: 0 0 24px 24px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        position: relative;
-      }
-
-      .logo-img {
-        height: 54px;
-        margin-bottom: 8px;
-      }
-
-      .title {
-        font-size: 18px;
-        opacity: 0.95;
-      }
-
-      .logout-btn {
-        position: absolute;
-        top: 18px;
-        left: 15px;
-        background: rgba(255,255,255,0.2);
-        border: none;
-        color: white;
-        padding: 7px 14px;
-        border-radius: 20px;
-        font-size: 13px;
-        cursor: pointer;
-        backdrop-filter: blur(10px);
-      }
-
-      /* ================= Modern Floating Bottom Menu 2026 ================= */
-
-      .main-menu {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 390px;
-        height: 70px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background: rgba(255,255,255,0.75);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-radius: 30px;
-        box-shadow:
-          0 15px 35px rgba(0,0,0,0.15),
-          inset 0 1px 1px rgba(255,255,255,0.5);
-        padding: 0 10px;
-        z-index: 999;
-      }
-
-      .main-menu button {
-        flex: 1;
-        height: 60px;
-        border: none;
-        background: none;
-        font-size: 11px;
-        font-family: inherit;
-        color: #777;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        cursor: pointer;
-        border-radius: 18px;
-        transition: all 0.25s ease;
-      }
-
-      .main-menu button::before {
-        font-size: 20px;
-      }
-
-      #menu-home::before { content: "🏠"; }
-      #menu-database::before { content: "🏢"; }
-      #menu-services::before { content: "🔧"; }
-      #menu-others::before { content: "📋"; }
-      #menu-hoghogh::before { content: "💰"; }
-
-      .main-menu button.active {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
-        color: #fff;
-        transform: translateY(-6px);
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
-      }
-
-      .main-menu button.active::before {
-        transform: scale(1.15);
-      }
-
-      /* ================= Buttons ================= */
-
-      .service-btn {
-        display: block;
-        margin: 25px auto;
-        padding: 16px 30px;
-        background: #6c757d;
-        color: white;
-        border: none;
-        border-radius: 14px;
-        font-size: 16px;
-        width: 100%;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        transition: 0.25s;
-      }
-
-      .service-btn:hover {
-        transform: translateY(-3px);
-        background: #5a6268;
-      }
-
-      /* ================= Dashboard Wrapper ================= */
-
-      .dashboard-wrapper {
-        background: white;
-        border-radius: 18px;
-        padding: 18px;
-        margin: 25px 0;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      }
-
-      .dashboard-wrapper iframe {
-        border: none;
-        width: 100%;
-      }
-
-      /* ================= Footer ================= */
-
-      footer {
-        background: linear-gradient(135deg, #7c5fcc, #5950aa);
-        color: #fff;
-        text-align: center;
-        padding: 18px 15px;
-        font-size: 14px;
-        border-radius: 24px 24px 0 0;
-        margin-top: 40px;
-      }
-
-      footer a {
-        color: #fff;
-        text-decoration: none;
-      }
-    </style>
-  `;
-}
-
-function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
-  return `
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- PWA Fullscreen Mode -->
-    <meta name="theme-color" content="#1e3a8a">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-    <link rel="manifest" href="manifest-v3.json">
-
-    <title>${pageTitle}</title>
-
-    <!-- فونت وزیر -->
-    <link rel="preconnect" href="https://fonts.rastikerdar.com">
-    <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
-
-    <style>
-      * {
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      html, body {
-        margin: 0;
-        padding: 0;
-        background: #f2f4f8;
-        height: 100%;
-      }
-
-      body {
-        display: flex;
-        justify-content: center;
-        font-family: "Vazir", Tahoma, sans-serif;
-      }
-
-      .container {
-        width: 414px;
-        max-width: 414px;
-        min-height: 100vh;
-        padding: 15px;
-        padding-bottom: 120px;
-      }
-
-      /* Header */
-
-      .header {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
-        color: #fff;
-        padding: 20px 15px;
-        text-align: center;
-        border-radius: 0 0 24px 24px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        position: relative;
-      }
-
-      .logo-img {
-        height: 54px;
-        margin-bottom: 8px;
-      }
-
-      .title {
-        font-size: 18px;
-      }
-
-      .logout-btn {
-        position: absolute;
-        top: 18px;
-        left: 15px;
-        background: rgba(255,255,255,0.2);
-        border: none;
-        color: white;
-        padding: 7px 14px;
-        border-radius: 20px;
-        font-size: 13px;
-        cursor: pointer;
-      }
-
-      /* Floating Bottom Menu */
-
-      .main-menu {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 390px;
-        height: 70px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background: rgba(255,255,255,0.85);
-        backdrop-filter: blur(20px);
-        border-radius: 30px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        padding: 0 10px;
-        z-index: 999;
-      }
-
-      .main-menu button {
-        flex: 1;
-        height: 60px;
-        border: none;
-        background: none;
-        font-size: 11px;
-        color: #777;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        cursor: pointer;
-        border-radius: 18px;
-        transition: 0.25s ease;
-      }
-
-      .main-menu button::before {
-        font-size: 20px;
-      }
-
-      #menu-home::before { content: "🏠"; }
-      #menu-database::before { content: "🏢"; }
-      #menu-services::before { content: "🔧"; }
-      #menu-others::before { content: "📋"; }
-      #menu-hoghogh::before { content: "💰"; }
-
-      .main-menu button.active {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
-        color: #fff;
-        transform: translateY(-6px);
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
-      }
-
-      /* Buttons */
-
-      .service-btn {
-        display: block;
-        margin: 25px auto;
-        padding: 16px 30px;
-        background: #6c757d;
-        color: white;
-        border: none;
-        border-radius: 14px;
-        font-size: 16px;
-        width: 100%;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      }
-
-      /* Dashboard */
-
-      .dashboard-wrapper {
-        background: white;
-        border-radius: 18px;
-        padding: 18px;
-        margin: 25px 0;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      }
-
-      footer {
-        background: linear-gradient(135deg, #ff6600, #ff8533);
-        color: #fff;
-        text-align: center;
-        padding: 18px 15px;
-        font-size: 14px;
-        border-radius: 24px 24px 0 0;
-        margin-top: 40px;
-      }
-    </style>
   `;
 }
 
@@ -721,6 +357,16 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         border: none;
       }
 
+      .iframe-undone iframe {
+        height: 350px !important;
+      }
+
+      @media (max-width: 480px) {
+        .iframe-undone iframe {
+          height: 300px !important;
+        }
+      }
+
       /* Buttons */
       .service-btn {
         display: block;
@@ -852,61 +498,6 @@ function databaseContent() {
 function servicesContent() {
   return `
 
-
-    <button class="service-btn" 
-            onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
-      ثبت سرویس جدید
-    </button>
-
-    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      پنل گزارش مالی سرویس ماهیانه
-    </h1>
-    
-      <div class="dashboard-wrapper">
-
-    
-        <div style="width:625px; height:330px; overflow:hidden;">
-        <iframe 
-       src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
-       width="1250"
-       height="660"
-       style="
-       border:none;
-       transform:scale(0.5);
-       transform-origin:top right;
-       "
-       allowfullscreen>
-       </iframe>
-      </div>
-
-    <!-- سرویس ماهانه انجام نشده -->
-    <iframe 
-  src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
-  width="1200"
-  height="960"
-  style="
-    border: none;
-    min-width: 1200px;
-    display: block;
-    transform: scale(0.31);
-    transform-origin: top right;
-  "
-  allowfullscreen>
-</iframe>
-
-
-
-    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      مدیریت سرویس‌های ماهیانه
-    </h1>
-    <div class="dashboard-wrapper">
-      <p>محتوای صفحه سرویس در حال توسعه...</p>
-    </div>
-  `;
-}
-function servicesContent() {
-  return `
-
     <!-- مدیریت سرویس‌ها -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
       مدیریت سرویس‌های ماهیانه
@@ -952,7 +543,7 @@ function servicesContent() {
        <div class="dashboard-wrapper" style="overflow-x:hidden; overflow-y:auto; height:450px;">
   
           <div class="dashboard-wrapper">
-  <div style="width:625px; height:330px; overflow-y:auto; overflow-x:hidden; margin:auto;">
+  <div style="width:225px; height:230px; overflow-y:auto; overflow-x:hidden; margin:auto;">
     
            <div class="dashboard-wrapper" style="overflow-x:auto; overflow-y:hidden;">
   
@@ -960,8 +551,8 @@ function servicesContent() {
     
            <iframe 
       src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
-      width="1250"
-      height="450"
+      width="650"
+      height="250"
       style="border:none; display:block;"
       allowfullscreen>
     </iframe>
@@ -1012,17 +603,18 @@ function servicesContent() {
     </h1>
 
     <div class="dashboard-wrapper">
-      <div class="iframe-fit">
+      <div class="iframe-fit iframe-undone">
         <iframe
           src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
           width="100%"
-          height="540"
+          height="350"
           allowfullscreen>
         </iframe>
       </div>
     </div>
   `;
 }
+
 function othersContent() {
   return `
 
