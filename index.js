@@ -436,6 +436,30 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         border: none;
       }
 
+      .iframe-debtors iframe {
+        width: 1000px !important;
+        min-width: 1000px !important;
+        height: 350px !important;
+      }
+
+      .iframe-financial-zoom {
+        width: 625px;
+        height: 350px;
+        overflow: hidden;
+      }
+
+      .iframe-financial-zoom iframe {
+        width: 1250px !important;
+        max-width: none !important;
+        min-width: 1250px;
+        height: 700px !important;
+        border: none;
+        display: block;
+        margin: 0;
+        transform: scale(0.5);
+        transform-origin: top right;
+      }
+
       .iframe-fit {
         width: 100%;
         margin: 0;
@@ -721,12 +745,14 @@ function servicesContent() {
 
     <div class="dashboard-wrapper">
       <div class="iframe-scroll-x">
-        <iframe
-          src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
-          width="1250"
-          height="700"
-          allowfullscreen>
-        </iframe>
+        <div class="iframe-financial-zoom">
+          <iframe
+            src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
+            width="1250"
+            height="700"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
 
@@ -762,13 +788,16 @@ function servicesContent() {
       </div>
     </div>
 
-    <div class="dashboard-wrapper iframe-undone-wrapper">
-      <div class="iframe-fit iframe-undone">
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      بدهکاران سرویس
+    </h1>
+
+    <div class="dashboard-wrapper">
+      <div class="iframe-scroll-x iframe-debtors">
         <iframe
           src="https://lookerstudio.google.com/embed/reporting/b45189d9-98a3-4c01-a681-bbc3ed54410a/page/wgrnB"
-          width="100%"
-          height="320"
-          scrolling="no"
+          width="1000"
+          height="350"
           allowfullscreen>
         </iframe>
       </div>
