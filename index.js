@@ -493,7 +493,7 @@ function sharedJavaScript() {
           localStorage.removeItem("loginTime");
           window.location.replace("login.html");
         } else {
-          loadPage('home');
+          loadPage('services');
         }
       });
 
@@ -585,26 +585,33 @@ function servicesContent() {
       پنل گزارش مالی سرویس ماهیانه
     </h1>
     
-    <div class="dashboard-wrapper">
-      <iframe 
-        src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
-        width="1250"
-        height="660"
-        style="border: none; min-width: 1250px; display: block;"
-        allowfullscreen>
-      </iframe>
-    </div>
+      <div class="dashboard-wrapper">
 
-    // سرویس ماهانه انجام نشده 
+    
+        <div style="width:625px; height:330px; overflow:hidden;">
+        <iframe 
+       src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
+       width="1250"
+       height="660"
+       style="
+       border:none;
+       transform:scale(0.5);
+       transform-origin:top right;
+       "
+       allowfullscreen>
+       </iframe>
+      </div>
+
+    <!-- سرویس ماهانه انجام نشده -->
     <iframe 
   src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
   width="1200"
-  height="660"
+  height="960"
   style="
     border: none;
     min-width: 1200px;
     display: block;
-    transform: scale(0.35);
+    transform: scale(0.31);
     transform-origin: top right;
   "
   allowfullscreen>
@@ -618,6 +625,133 @@ function servicesContent() {
     <div class="dashboard-wrapper">
       <p>محتوای صفحه سرویس در حال توسعه...</p>
     </div>
+  `;
+}
+function servicesContent() {
+  return `
+
+    <!-- مدیریت سرویس‌ها -->
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      مدیریت سرویس‌های ماهیانه
+    </h1>
+
+
+    <!-- دکمه ثبت سرویس -->
+    <button class="service-btn" 
+      onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
+      ثبت سرویس جدید
+    </button>
+
+    <!-- گزارش مالی سرویس ماهیانه -->
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      پنل گزارش مالی سرویس ماهیانه
+    </h1>
+
+    <div class="dashboard-wrapper">
+      <div style="width:625px; height:330px; overflow:hidden; margin:auto;">
+        <iframe 
+          src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
+          width="1250"
+          height="550"
+          style="
+            border:none;
+            transform:scale(1);
+            transform-origin:top right;
+          "
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- سرویس ماهانه انجام نشده -->
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      سرویس ماهانه انجام نشده
+    </h1>
+
+    <div class="dashboard-wrapper" style="overflow-x:auto; overflow-y:hidden;">
+  
+      <div style="height:450px; overflow:hidden;">
+    
+       <div class="dashboard-wrapper" style="overflow-x:hidden; overflow-y:auto; height:450px;">
+  
+          <div class="dashboard-wrapper">
+  <div style="width:625px; height:330px; overflow-y:auto; overflow-x:hidden; margin:auto;">
+    
+           <div class="dashboard-wrapper" style="overflow-x:auto; overflow-y:hidden;">
+  
+  <div style="height:450px; overflow:hidden;">
+    
+           <iframe 
+      src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
+      width="1250"
+      height="450"
+      style="border:none; display:block;"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+</div>
+
+           </div>
+        </div>>
+
+       </div>
+
+    </div>
+
+</div>
+
+  `;
+}
+
+function servicesContent() {
+  return `
+
+    <!-- مدیریت سرویس‌ها -->
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      مدیریت سرویس‌های ماهیانه
+    </h1>
+
+    <!-- دکمه ثبت سرویس -->
+    <button class="service-btn" 
+      onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
+      ثبت سرویس جدید
+    </button>
+
+    <!-- گزارش مالی سرویس ماهیانه -->
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      پنل گزارش مالی سرویس ماهیانه
+    </h1>
+
+    <div class="dashboard-wrapper">
+      <div style="width:625px; height:330px; overflow:hidden; margin:auto;">
+        <iframe 
+          src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
+          width="1250"
+          height="550"
+          style="border:none; display:block;"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- سرویس ماهانه انجام نشده -->
+    <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
+      سرویس ماهانه انجام نشده
+    </h1>
+
+  <div class="dashboard-wrapper">
+    <div style="width:625px; height:330px; overflow:hidden; margin:auto;">
+      <iframe 
+        src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
+        width="1250"
+        height="550"
+        style="border:none; display:block; transform:scale(0.6); transform-origin:top right;"
+        allowfullscreen>
+      </iframe>
+    </div>
+
   `;
 }
 
