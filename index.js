@@ -357,13 +357,27 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         border: none;
       }
 
+      .iframe-undone-wrapper {
+        overflow: hidden;
+        padding-bottom: 0;
+      }
+
+      .iframe-undone {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+      }
+
       .iframe-undone iframe {
-        height: 350px !important;
+        height: 320px !important;
+        overflow: hidden !important;
+        margin-bottom: 0 !important;
       }
 
       @media (max-width: 480px) {
         .iframe-undone iframe {
-          height: 300px !important;
+          height: 280px !important;
         }
       }
 
@@ -602,12 +616,13 @@ function servicesContent() {
       سرویس ماهانه انجام نشده
     </h1>
 
-    <div class="dashboard-wrapper">
+    <div class="dashboard-wrapper iframe-undone-wrapper">
       <div class="iframe-fit iframe-undone">
         <iframe
           src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
           width="100%"
-          height="350"
+          height="320"
+          scrolling="no"
           allowfullscreen>
         </iframe>
       </div>
