@@ -1,4 +1,4 @@
-//-- index.js
+﻿//-- index.js
 // ====================== کامپوننت‌های مشترک ======================
 
 function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
@@ -140,7 +140,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
 
       /* فوتر مشترک (رنگ نارنجی برای match با لوگو + اندازه مناسب) */
       footer {
-        background: #ff6600;  /* نارنجی از لوگو */
+        background: #9baed6;  /* نارنجی از لوگو */
         color: #fff;  /* سفید برای خوانایی بهتر */
         text-align: center;
         padding: 18px 15px;  /* اندازه match با هدر */
@@ -356,7 +356,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
       /* ================= Footer ================= */
 
       footer {
-        background: linear-gradient(135deg, #ff6600, #ff8533);
+        background: linear-gradient(135deg, #7c5fcc, #5950aa);
         color: #fff;
         text-align: center;
         padding: 18px 15px;
@@ -725,18 +725,6 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
   `;
 }
 
-function sharedFooter() {
-  return `
-    <footer>
-      <strong>آسانسور پارسیان لیفت</strong><br>
-      تهران، جنت‌آباد، چهارراه مخبری، نرسیده به شاهین، پلاک ۱۸۵<br>
-      ☎ ۰۲۱-۴۴۸۰۰۴۶۵  ۰۹۱۲۲۰۶۱۷۱۲<br>
-      ✉ parsianlift@gmail.com<br><br>
-      © ۱۴۰۴ — تمامی حقوق برای پارسیان لیفت محفوظ است.
-    </footer>
-  `;
-}
-
 function sharedJavaScript() {
   return `
     <script>
@@ -806,8 +794,6 @@ function generateBody() {
         <!-- محتوای صفحه به صورت دینامیک اینجا لود می‌شود -->
       </div>
     </div>
-    
-    ${sharedFooter()}
   `;
 }
 
