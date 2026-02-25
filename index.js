@@ -1,20 +1,20 @@
-//-- index.js
-// ====================== کامپوننت‌های مشترک ======================
+﻿//-- index.js
+// ====================== Ú©Ø§Ù…Ù¾ÙˆÙ†Ù†Øªâ€ŒÙ‡Ø§ÛŒ Ù…Ø´ØªØ±Ú© ======================
 
-function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
+function sharedHead(pageTitle = "Ù…Ø¯ÛŒØ±ÛŒØª Ù¾Ø§Ø±Ø³ÛŒØ§Ù† Ù„ÛŒÙØª - Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯") {
   return `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=414, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>${pageTitle}</title>
     
-    <!-- فونت وزیر -->
+    <!-- ÙÙˆÙ†Øª ÙˆØ²ÛŒØ± -->
     <link rel="preconnect" href="https://fonts.rastikerdar.com">
     <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
 
     <style>
       * { box-sizing: border-box; }
       
-      /* قفل عرض ۴۱۴px حتی روی دسکتاپ */
+      /* Ù‚ÙÙ„ Ø¹Ø±Ø¶ Û´Û±Û´px Ø­ØªÛŒ Ø±ÙˆÛŒ Ø¯Ø³Ú©ØªØ§Ù¾ */
       html, body {
         width: 414px !important;
         max-width: 414px !important;
@@ -39,11 +39,11 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         padding: 15px;
       }
 
-      /* هدر مشترک (اندازه padding حالا match با فوتر) */
+      /* Ù‡Ø¯Ø± Ù…Ø´ØªØ±Ú© (Ø§Ù†Ø¯Ø§Ø²Ù‡ padding Ø­Ø§Ù„Ø§ match Ø¨Ø§ ÙÙˆØªØ±) */
       .header {
-        background: #1e3a8a;  /* آبی اصلی نگه داشته شد */
+        background: #1e3a8a;  /* Ø¢Ø¨ÛŒ Ø§ØµÙ„ÛŒ Ù†Ú¯Ù‡ Ø¯Ø§Ø´ØªÙ‡ Ø´Ø¯ */
         color: white;
-        padding: 18px 15px;  /* اندازه مناسب و match */
+        padding: 18px 15px;  /* Ø§Ù†Ø¯Ø§Ø²Ù‡ Ù…Ù†Ø§Ø³Ø¨ Ùˆ match */
         text-align: center;
         position: sticky;
         top: 0;
@@ -61,7 +61,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
       .header .title { font-size: 18px; opacity: 0.95; }
       .logout-btn {
         position: absolute;
-        top: 18px;  /* با padding جدید match */
+        top: 18px;  /* Ø¨Ø§ padding Ø¬Ø¯ÛŒØ¯ match */
         left: 15px;
         background: rgba(255,255,255,0.2);
         color: white;
@@ -72,7 +72,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         cursor: pointer;
       }
 
-      /* منوی مشترک */
+      /* Ù…Ù†ÙˆÛŒ Ù…Ø´ØªØ±Ú© */
       .main-menu {
   position: fixed;
   bottom: 0;
@@ -122,7 +122,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         transform: translateY(-2px);
       }
 
-      /* داشبورد */
+      /* Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯ */
       .dashboard-wrapper {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -138,14 +138,14 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         border: none;
       }
 
-      /* فوتر مشترک (رنگ نارنجی برای match با لوگو + اندازه مناسب) */
+      /* ÙÙˆØªØ± Ù…Ø´ØªØ±Ú© (Ø±Ù†Ú¯ Ù†Ø§Ø±Ù†Ø¬ÛŒ Ø¨Ø±Ø§ÛŒ match Ø¨Ø§ Ù„ÙˆÚ¯Ùˆ + Ø§Ù†Ø¯Ø§Ø²Ù‡ Ù…Ù†Ø§Ø³Ø¨) */
       footer {
-        background: #ff6600;  /* نارنجی از لوگو */
-        color: #fff;  /* سفید برای خوانایی بهتر */
+        background: #ff6600;  /* Ù†Ø§Ø±Ù†Ø¬ÛŒ Ø§Ø² Ù„ÙˆÚ¯Ùˆ */
+        color: #fff;  /* Ø³ÙÛŒØ¯ Ø¨Ø±Ø§ÛŒ Ø®ÙˆØ§Ù†Ø§ÛŒÛŒ Ø¨Ù‡ØªØ± */
         text-align: center;
-        padding: 18px 15px;  /* اندازه match با هدر */
+        padding: 18px 15px;  /* Ø§Ù†Ø¯Ø§Ø²Ù‡ match Ø¨Ø§ Ù‡Ø¯Ø± */
         font-size: 14px;
-        margin-top: 30px;  /* فاصله کمتر برای مناسب‌تر شدن */
+        margin-top: 30px;  /* ÙØ§ØµÙ„Ù‡ Ú©Ù…ØªØ± Ø¨Ø±Ø§ÛŒ Ù…Ù†Ø§Ø³Ø¨â€ŒØªØ± Ø´Ø¯Ù† */
         line-height: 1.5;
       }
       footer a { color: #fff; text-decoration: none; }
@@ -156,15 +156,15 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
 function sharedHeader() {
   return `
     <div class="header">
-      <button class="logout-btn" onclick="logout()">خروج</button>
+      <button class="logout-btn" onclick="logout()">Ø®Ø±ÙˆØ¬</button>
       
-      <!-- لوگو از GitHub -->
+      <!-- Ù„ÙˆÚ¯Ùˆ Ø§Ø² GitHub -->
       <img 
         src="https://raw.githubusercontent.com/parsianlift/dashboard/main/photo/LogoCapture.JPG" 
         class="logo-img" 
-        alt="لوگو پارسیان لیفت">
+        alt="Ù„ÙˆÚ¯Ùˆ Ù¾Ø§Ø±Ø³ÛŒØ§Ù† Ù„ÛŒÙØª">
       
-      <div class="title">داشبورد مدیریت</div>
+      <div class="title">Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯ Ù…Ø¯ÛŒØ±ÛŒØª</div>
     </div>
   `;
 }
@@ -173,22 +173,22 @@ function sharedHeader() {
 function sharedMenu(activePage = "home") {
   return `
     <div class="main-menu">
-      <button id="menu-home" onclick="loadPage('home')">خانه</button>
-      <button id="menu-database" onclick="loadPage('database')">ساختمان</button>
-      <button id="menu-services" onclick="loadPage('services')">سرویس</button>
-      <button id="menu-others" onclick="loadPage('others')">خدمات</button>
-      <button id="menu-hoghogh" onclick="loadPage('hoghogh')">حقوق</button>
+      <button id="menu-home" onclick="loadPage('home')">Ø®Ø§Ù†Ù‡</button>
+      <button id="menu-database" onclick="loadPage('database')">Ø³Ø§Ø®ØªÙ…Ø§Ù†</button>
+      <button id="menu-services" onclick="loadPage('services')">Ø³Ø±ÙˆÛŒØ³</button>
+      <button id="menu-others" onclick="loadPage('others')">Ø®Ø¯Ù…Ø§Øª</button>
+      <button id="menu-hoghogh" onclick="loadPage('hoghogh')">Ø­Ù‚ÙˆÙ‚</button>
     </div>
   `;
 }
 
-function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
+function sharedHead(pageTitle = "Ù…Ø¯ÛŒØ±ÛŒØª Ù¾Ø§Ø±Ø³ÛŒØ§Ù† Ù„ÛŒÙØª - Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯") {
   return `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${pageTitle}</title>
 
-    <!-- فونت وزیر -->
+    <!-- ÙÙˆÙ†Øª ÙˆØ²ÛŒØ± -->
     <link rel="preconnect" href="https://fonts.rastikerdar.com">
     <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
 
@@ -300,11 +300,11 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         font-size: 20px;
       }
 
-      #menu-home::before { content: "🏠"; }
-      #menu-database::before { content: "🏢"; }
-      #menu-services::before { content: "🔧"; }
-      #menu-others::before { content: "📋"; }
-      #menu-hoghogh::before { content: "💰"; }
+      #menu-home::before { content: "ðŸ "; }
+      #menu-database::before { content: "ðŸ¢"; }
+      #menu-services::before { content: "ðŸ”§"; }
+      #menu-others::before { content: "ðŸ“‹"; }
+      #menu-hoghogh::before { content: "ðŸ’°"; }
 
       .main-menu button.active {
         background: linear-gradient(135deg, #1e3a8a, #2563eb);
@@ -373,7 +373,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
   `;
 }
 
-function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
+function sharedHead(pageTitle = "Ù…Ø¯ÛŒØ±ÛŒØª Ù¾Ø§Ø±Ø³ÛŒØ§Ù† Ù„ÛŒÙØª - Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯") {
   return `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -388,7 +388,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
 
     <title>${pageTitle}</title>
 
-    <!-- فونت وزیر -->
+    <!-- ÙÙˆÙ†Øª ÙˆØ²ÛŒØ± -->
     <link rel="preconnect" href="https://fonts.rastikerdar.com">
     <link href="https://fonts.rastikerdar.com/vazir/font-face.css" rel="stylesheet">
 
@@ -494,11 +494,11 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         font-size: 20px;
       }
 
-      #menu-home::before { content: "🏠"; }
-      #menu-database::before { content: "🏢"; }
-      #menu-services::before { content: "🔧"; }
-      #menu-others::before { content: "📋"; }
-      #menu-hoghogh::before { content: "💰"; }
+      #menu-home::before { content: "ðŸ "; }
+      #menu-database::before { content: "ðŸ¢"; }
+      #menu-services::before { content: "ðŸ”§"; }
+      #menu-others::before { content: "ðŸ“‹"; }
+      #menu-hoghogh::before { content: "ðŸ’°"; }
 
       .main-menu button.active {
         background: linear-gradient(135deg, #1e3a8a, #2563eb);
@@ -545,7 +545,7 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
   `;
 }
 
-function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشبورد") {
+function sharedHead(pageTitle = "Ù…Ø¯ÛŒØ±ÛŒØª Ù¾Ø§Ø±Ø³ÛŒØ§Ù† Ù„ÛŒÙØª - Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯") {
   return `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -556,6 +556,9 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
 
     <title>${pageTitle}</title>
 
@@ -659,11 +662,11 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
         font-size: 20px;
       }
 
-      #menu-home::before { content: "🏠"; }
-      #menu-database::before { content: "🏢"; }
-      #menu-services::before { content: "🔧"; }
-      #menu-others::before { content: "📋"; }
-      #menu-hoghogh::before { content: "💰"; }
+      #menu-home::before { content: "ðŸ "; }
+      #menu-database::before { content: "ðŸ¢"; }
+      #menu-services::before { content: "ðŸ”§"; }
+      #menu-others::before { content: "ðŸ“‹"; }
+      #menu-hoghogh::before { content: "ðŸ’°"; }
 
       .main-menu button.active {
         background: linear-gradient(135deg, #1e3a8a, #2563eb);
@@ -725,11 +728,11 @@ function sharedHead(pageTitle = "مدیریت پارسیان لیفت - داشب
 function sharedFooter() {
   return `
     <footer>
-      <strong>آسانسور پارسیان لیفت</strong><br>
-      تهران، جنت‌آباد، چهارراه مخبری، نرسیده به شاهین، پلاک ۱۸۵<br>
-      ☎ ۰۲۱-۴۴۸۰۰۴۶۵  ۰۹۱۲۲۰۶۱۷۱۲<br>
-      ✉ parsianlift@gmail.com<br><br>
-      © ۱۴۰۴ — تمامی حقوق برای پارسیان لیفت محفوظ است.
+      <strong>Ø¢Ø³Ø§Ù†Ø³ÙˆØ± Ù¾Ø§Ø±Ø³ÛŒØ§Ù† Ù„ÛŒÙØª</strong><br>
+      ØªÙ‡Ø±Ø§Ù†ØŒ Ø¬Ù†Øªâ€ŒØ¢Ø¨Ø§Ø¯ØŒ Ú†Ù‡Ø§Ø±Ø±Ø§Ù‡ Ù…Ø®Ø¨Ø±ÛŒØŒ Ù†Ø±Ø³ÛŒØ¯Ù‡ Ø¨Ù‡ Ø´Ø§Ù‡ÛŒÙ†ØŒ Ù¾Ù„Ø§Ú© Û±Û¸Ûµ<br>
+      â˜Ž Û°Û²Û±-Û´Û´Û¸Û°Û°Û´Û¶Ûµâ€ƒâ€ƒÛ°Û¹Û±Û²Û²Û°Û¶Û±Û·Û±Û²<br>
+      âœ‰ parsianlift@gmail.com<br><br>
+      Â© Û±Û´Û°Û´ â€” ØªÙ…Ø§Ù…ÛŒ Ø­Ù‚ÙˆÙ‚ Ø¨Ø±Ø§ÛŒ Ù¾Ø§Ø±Ø³ÛŒØ§Ù† Ù„ÛŒÙØª Ù…Ø­ÙÙˆØ¸ Ø§Ø³Øª.
     </footer>
   `;
 }
@@ -763,13 +766,13 @@ function sharedJavaScript() {
         const contentDiv = document.getElementById('page-content');
         let content = '';
 
-        // فعال کردن تب
+        // ÙØ¹Ø§Ù„ Ú©Ø±Ø¯Ù† ØªØ¨
         document.querySelectorAll('.main-menu button').forEach(btn => {
           btn.classList.remove('active');
         });
         document.getElementById('menu-' + page).classList.add('active');
 
-        // انتخاب محتوا
+        // Ø§Ù†ØªØ®Ø§Ø¨ Ù…Ø­ØªÙˆØ§
         switch(page) {
           case 'home':     content = homeContent(); break;
           case 'database': content = databaseContent(); break;
@@ -780,7 +783,7 @@ function sharedJavaScript() {
         contentDiv.innerHTML = content;
       }
 
-      // ==================== توابع محتوا اینجا inject می‌شن ====================
+      // ==================== ØªÙˆØ§Ø¨Ø¹ Ù…Ø­ØªÙˆØ§ Ø§ÛŒÙ†Ø¬Ø§ inject Ù…ÛŒâ€ŒØ´Ù† ====================
       ${homeContent.toString()}
       ${databaseContent.toString()}
       ${servicesContent.toString()}
@@ -789,7 +792,7 @@ function sharedJavaScript() {
   `;
 }
 
-// ====================== ساختار صفحه اصلی ======================
+// ====================== Ø³Ø§Ø®ØªØ§Ø± ØµÙØ­Ù‡ Ø§ØµÙ„ÛŒ ======================
 function generateHead() {
   return sharedHead();
 }
@@ -800,7 +803,7 @@ function generateBody() {
       ${sharedHeader()}
       ${sharedMenu()}
       <div id="page-content">
-        <!-- محتوای صفحه به صورت دینامیک اینجا لود می‌شود -->
+        <!-- Ù…Ø­ØªÙˆØ§ÛŒ ØµÙØ­Ù‡ Ø¨Ù‡ ØµÙˆØ±Øª Ø¯ÛŒÙ†Ø§Ù…ÛŒÚ© Ø§ÛŒÙ†Ø¬Ø§ Ù„ÙˆØ¯ Ù…ÛŒâ€ŒØ´ÙˆØ¯ -->
       </div>
     </div>
     
@@ -808,7 +811,7 @@ function generateBody() {
   `;
 }
 
-// ====================== محتوای صفحات (جداگانه و خوانا) ======================
+// ====================== Ù…Ø­ØªÙˆØ§ÛŒ ØµÙØ­Ø§Øª (Ø¬Ø¯Ø§Ú¯Ø§Ù†Ù‡ Ùˆ Ø®ÙˆØ§Ù†Ø§) ======================
 
 function homeContent() {
   return `
@@ -820,10 +823,10 @@ function homeContent() {
 function databaseContent() {
   return `
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      پایگاه داده اطلاعات ساختمان‌ها
+      Ù¾Ø§ÛŒÚ¯Ø§Ù‡ Ø¯Ø§Ø¯Ù‡ Ø§Ø·Ù„Ø§Ø¹Ø§Øª Ø³Ø§Ø®ØªÙ…Ø§Ù†â€ŒÙ‡Ø§
     </h1>
     <div class="dashboard-wrapper">
-      <p>محتوای صفحه اطلاعات ساختمان در حال توسعه...</p>
+      <p>Ù…Ø­ØªÙˆØ§ÛŒ ØµÙØ­Ù‡ Ø§Ø·Ù„Ø§Ø¹Ø§Øª Ø³Ø§Ø®ØªÙ…Ø§Ù† Ø¯Ø± Ø­Ø§Ù„ ØªÙˆØ³Ø¹Ù‡...</p>
     </div>
   `;
 }
@@ -834,11 +837,11 @@ function servicesContent() {
 
     <button class="service-btn" 
             onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
-      ثبت سرویس جدید
+      Ø«Ø¨Øª Ø³Ø±ÙˆÛŒØ³ Ø¬Ø¯ÛŒØ¯
     </button>
 
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      پنل گزارش مالی سرویس ماهیانه
+      Ù¾Ù†Ù„ Ú¯Ø²Ø§Ø±Ø´ Ù…Ø§Ù„ÛŒ Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡ÛŒØ§Ù†Ù‡
     </h1>
     
       <div class="dashboard-wrapper">
@@ -858,7 +861,7 @@ function servicesContent() {
        </iframe>
       </div>
 
-    <!-- سرویس ماهانه انجام نشده -->
+    <!-- Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡Ø§Ù†Ù‡ Ø§Ù†Ø¬Ø§Ù… Ù†Ø´Ø¯Ù‡ -->
     <iframe 
   src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
   width="1200"
@@ -876,31 +879,31 @@ function servicesContent() {
 
 
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      مدیریت سرویس‌های ماهیانه
+      Ù…Ø¯ÛŒØ±ÛŒØª Ø³Ø±ÙˆÛŒØ³â€ŒÙ‡Ø§ÛŒ Ù…Ø§Ù‡ÛŒØ§Ù†Ù‡
     </h1>
     <div class="dashboard-wrapper">
-      <p>محتوای صفحه سرویس در حال توسعه...</p>
+      <p>Ù…Ø­ØªÙˆØ§ÛŒ ØµÙØ­Ù‡ Ø³Ø±ÙˆÛŒØ³ Ø¯Ø± Ø­Ø§Ù„ ØªÙˆØ³Ø¹Ù‡...</p>
     </div>
   `;
 }
 function servicesContent() {
   return `
 
-    <!-- مدیریت سرویس‌ها -->
+    <!-- Ù…Ø¯ÛŒØ±ÛŒØª Ø³Ø±ÙˆÛŒØ³â€ŒÙ‡Ø§ -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      مدیریت سرویس‌های ماهیانه
+      Ù…Ø¯ÛŒØ±ÛŒØª Ø³Ø±ÙˆÛŒØ³â€ŒÙ‡Ø§ÛŒ Ù…Ø§Ù‡ÛŒØ§Ù†Ù‡
     </h1>
 
 
-    <!-- دکمه ثبت سرویس -->
+    <!-- Ø¯Ú©Ù…Ù‡ Ø«Ø¨Øª Ø³Ø±ÙˆÛŒØ³ -->
     <button class="service-btn" 
       onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
-      ثبت سرویس جدید
+      Ø«Ø¨Øª Ø³Ø±ÙˆÛŒØ³ Ø¬Ø¯ÛŒØ¯
     </button>
 
-    <!-- گزارش مالی سرویس ماهیانه -->
+    <!-- Ú¯Ø²Ø§Ø±Ø´ Ù…Ø§Ù„ÛŒ Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡ÛŒØ§Ù†Ù‡ -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      پنل گزارش مالی سرویس ماهیانه
+      Ù¾Ù†Ù„ Ú¯Ø²Ø§Ø±Ø´ Ù…Ø§Ù„ÛŒ Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡ÛŒØ§Ù†Ù‡
     </h1>
 
     <div class="dashboard-wrapper">
@@ -919,9 +922,9 @@ function servicesContent() {
       </div>
     </div>
 
-    <!-- سرویس ماهانه انجام نشده -->
+    <!-- Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡Ø§Ù†Ù‡ Ø§Ù†Ø¬Ø§Ù… Ù†Ø´Ø¯Ù‡ -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      سرویس ماهانه انجام نشده
+      Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡Ø§Ù†Ù‡ Ø§Ù†Ø¬Ø§Ù… Ù†Ø´Ø¯Ù‡
     </h1>
 
     <div class="dashboard-wrapper" style="overflow-x:auto; overflow-y:hidden;">
@@ -964,20 +967,20 @@ function servicesContent() {
 function servicesContent() {
   return `
 
-    <!-- مدیریت سرویس‌ها -->
+    <!-- Ù…Ø¯ÛŒØ±ÛŒØª Ø³Ø±ÙˆÛŒØ³â€ŒÙ‡Ø§ -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      مدیریت سرویس‌های ماهیانه
+      Ù…Ø¯ÛŒØ±ÛŒØª Ø³Ø±ÙˆÛŒØ³â€ŒÙ‡Ø§ÛŒ Ù…Ø§Ù‡ÛŒØ§Ù†Ù‡
     </h1>
 
-    <!-- دکمه ثبت سرویس -->
+    <!-- Ø¯Ú©Ù…Ù‡ Ø«Ø¨Øª Ø³Ø±ÙˆÛŒØ³ -->
     <button class="service-btn" 
       onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
-      ثبت سرویس جدید
+      Ø«Ø¨Øª Ø³Ø±ÙˆÛŒØ³ Ø¬Ø¯ÛŒØ¯
     </button>
 
-    <!-- گزارش مالی سرویس ماهیانه -->
+    <!-- Ú¯Ø²Ø§Ø±Ø´ Ù…Ø§Ù„ÛŒ Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡ÛŒØ§Ù†Ù‡ -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      پنل گزارش مالی سرویس ماهیانه
+      Ù¾Ù†Ù„ Ú¯Ø²Ø§Ø±Ø´ Ù…Ø§Ù„ÛŒ Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡ÛŒØ§Ù†Ù‡
     </h1>
 
     <div class="dashboard-wrapper">
@@ -992,9 +995,9 @@ function servicesContent() {
       </div>
     </div>
 
-    <!-- سرویس ماهانه انجام نشده -->
+    <!-- Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡Ø§Ù†Ù‡ Ø§Ù†Ø¬Ø§Ù… Ù†Ø´Ø¯Ù‡ -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
-      سرویس ماهانه انجام نشده
+      Ø³Ø±ÙˆÛŒØ³ Ù…Ø§Ù‡Ø§Ù†Ù‡ Ø§Ù†Ø¬Ø§Ù… Ù†Ø´Ø¯Ù‡
     </h1>
 
   <div class="dashboard-wrapper">
@@ -1017,7 +1020,7 @@ function othersContent() {
 <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
     <button class="service-btn" 
             onclick="window.location.href='https://script.google.com/macros/s/AKfycbzg5Vo4V4PKW-Tyi-w8hZZiaY5-2-eOO38nKAbEqh9rNCK8Cs7Pp97Xuzj85jIfpqr3/exec'">
-      مدیریت همه خدمات
+      Ù…Ø¯ÛŒØ±ÛŒØª Ù‡Ù…Ù‡ Ø®Ø¯Ù…Ø§Øª
     </button>
 
 
@@ -1029,7 +1032,7 @@ function hoghoghContent() {
   return `
     <div class="dashboard-wrapper">
       <iframe 
-        src="لینک-مورد-نظر-اینجا-قرار-بگیرد"
+        src="Ù„ÛŒÙ†Ú©-Ù…ÙˆØ±Ø¯-Ù†Ø¸Ø±-Ø§ÛŒÙ†Ø¬Ø§-Ù‚Ø±Ø§Ø±-Ø¨Ú¯ÛŒØ±Ø¯"
         width="1250"
         height="660"
         style="border: none; min-width: 1250px; display: block;"
@@ -1038,3 +1041,4 @@ function hoghoghContent() {
     </div>
   `;
 }
+
