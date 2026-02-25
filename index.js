@@ -966,54 +966,47 @@ function servicesContent() {
 
 function servicesContent() {
   return `
-
-    <!-- مدیریت سرویس‌ها -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
       مدیریت سرویس‌های ماهیانه
     </h1>
 
-    <!-- دکمه ثبت سرویس -->
-    <button class="service-btn" 
-      onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
+    <button class="service-btn" onclick="window.location.href='https://script.google.com/macros/s/AKfycbzfm6uUstUCICWCpIrauRCq6PlPKzyxw6J8BPAy-deTWQjns-Fb8dL8hjMkrpccjEuP/exec'">
       ثبت سرویس جدید
     </button>
 
-    <!-- گزارش مالی سرویس ماهیانه -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
       پنل گزارش مالی سرویس ماهیانه
     </h1>
 
     <div class="dashboard-wrapper">
-      <div style="width:625px; height:330px; overflow:hidden; margin:auto;">
-        <iframe 
+      <div style="width:625px; height:330px; max-width:100%; overflow:hidden; margin:auto;">
+        <iframe
           src="https://lookerstudio.google.com/embed/reporting/12YbMhxfPPECg2_BvZkLHFr1jCGoDCmT4/page/6IDS?rm=minimal"
           width="1250"
-          height="550"
-          style="border:none; display:block;"
+          height="660"
+          style="border:none; display:block; width:1250px !important; max-width:none !important; transform:scale(0.5); transform-origin:top right;"
           allowfullscreen>
         </iframe>
       </div>
     </div>
 
-    <!-- سرویس ماهانه انجام نشده -->
     <h1 style="text-align:center; color:#1e3a8a; margin:30px 0 20px; font-size:24px;">
       سرویس ماهانه انجام نشده
     </h1>
 
-  <div class="dashboard-wrapper">
-    <div style="width:625px; height:330px; overflow:hidden; margin:auto;">
-      <iframe 
-        src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
-        width="1250"
-        height="550"
-        style="border:none; display:block; transform:scale(0.6); transform-origin:top right;"
-        allowfullscreen>
-      </iframe>
+    <div class="dashboard-wrapper">
+      <div style="width:625px; height:330px; max-width:100%; overflow:hidden; margin:auto;">
+        <iframe
+          src="https://lookerstudio.google.com/embed/reporting/6136844b-ee45-4834-9ce3-53b5bfec9d74/page/eI0BB"
+          width="1250"
+          height="900"
+          style="border:none; display:block; width:1250px !important; max-width:none !important; transform:scale(0.35); transform-origin:top right;"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
-
   `;
 }
-
 function othersContent() {
   return `
 
